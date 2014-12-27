@@ -33,30 +33,36 @@
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="搜索">
+                        <input class="form-control" type="text" placeholder="搜索商品">
                     </div>
                 </form>
            </div>
         </nav>
 
         <div id="page-wrapper">
-            <div class="container-fluid">
-	        <div class="row-fluid">
-	            <div class="span12">
-			<div class="row-fluid">
-			    <div class="span2">
-                               H
-			    </div>
-			    <div class="span6">
-                               M 
-			    </div>
-			    <div class="span4">
-                              D
-			    </div>
-			</div>
+            <div class="container">
+	        <div class="row">
+                    <div class="col-md-8">
+                        <img style="height:80%" src="/static/img/sales.jpeg"></img>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">销量排行前十</div>
+                            <table class="table">
+                            </table>
+                        </div> 
 		    </div>
-	       </div>
-           </div>
+	        </div>
+                <div class="row">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary">当天</button>
+                        <button type="button" class="btn btn-primary">本周</button>
+                        <button type="button" class="btn btn-primary">本月</button>
+                        <button type="button" class="btn btn-primary">季度</button>
+                        <button type="button" class="btn btn-primary">本年</button>
+                   </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="/static/js/bootstrap.js"></script>
