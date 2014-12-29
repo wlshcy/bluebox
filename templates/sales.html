@@ -1,10 +1,11 @@
 <html>
 <head>
-   <title>销量排行</title>
+   <!--<title>销量排行</title>-->
    <link href="/static/css/bootstrap.css" rel="stylesheet">
    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
    <link href="/static/css/flat-ui.css" rel="stylesheet">
    <link href="/static/css/bluebox.css" rel="stylesheet">
+   <link href="/static/css/owl.carousel.css" rel="stylesheet">
    <link href="/static/css/flatlab.css" rel="stylesheet">
    <link href="/static/css/flatlab-responsive.css" rel="stylesheet">
 </head>
@@ -12,11 +13,11 @@
 <body> 
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
-           <div class="navbar-header">
+           <!--<div class="navbar-header">
                <span class="navbar-brand"><font style="color:white">MY SHOP</font></span>
-           </div>
+           </div>-->
            <div class="collapse navbar-collapse navbar-ex1-collapse">
-               <ul class="nav navbar-nav side-nav">
+               <!--<ul class="nav navbar-nav side-nav">
                     <li class="active">
                         <a href="/sales"><i class="fa fa-fw fa-dashboard"></i> 销量排行</a>
                     </li>
@@ -37,126 +38,191 @@
                     <div class="form-group">
                         <input class="form-control" type="text" placeholder="搜索商品">
                     </div>
-                </form>
+                </form>-->
            </div>
         </nav>
 
         <div id="page-wrapper">
             <div class="container-fluid">
 	        <div class="row-fluid">
-                    <div class="col-md-8">
+                    <div class="col-lg-8">
+                        <!--<div class="border-head">
+                            <h3>Earning Graph</h3>
+                        </div>-->
                         <div class="custom-bar-chart">
-                          <ul class="y-axis">
-                              <li><span>100</span></li>
-                              <li><span>80</span></li>
-                              <li><span>60</span></li>
-                              <li><span>40</span></li>
-                              <li><span>20</span></li>
-                              <li><span>0</span></li>
-                          </ul>
-                          <div class="bar">
-                              <div class="title">JAN</div>
-                              <div class="value tooltips" data-original-title="80%" data-toggle="tooltip" data-placement="top">80%</div>
-                          </div>
-                          <div class="bar ">
-                              <div class="title">FEB</div>
-                              <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
-                          </div>
-                          <div class="bar ">
-                              <div class="title">MAR</div>
-                              <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">40%</div>
-                          </div>
-                          <div class="bar ">
-                              <div class="title">APR</div>
-                              <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">55%</div>
-                          </div>
-                          <div class="bar">
-                              <div class="title">MAY</div>
-                              <div class="value tooltips" data-original-title="20%" data-toggle="tooltip" data-placement="top">20%</div>
-                          </div>
-                          <div class="bar ">
-                              <div class="title">JUN</div>
-                              <div class="value tooltips" data-original-title="39%" data-toggle="tooltip" data-placement="top">39%</div>
-                          </div>
-                          <div class="bar">
-                              <div class="title">JUL</div>
-                              <div class="value tooltips" data-original-title="75%" data-toggle="tooltip" data-placement="top">75%</div>
-                          </div>
-                          <div class="bar ">
-                              <div class="title">AUG</div>
-                              <div class="value tooltips" data-original-title="45%" data-toggle="tooltip" data-placement="top">45%</div>
-                          </div>
-                          <div class="bar ">
-                              <div class="title">SEP</div>
-                              <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
-                          </div>
-                          <div class="bar ">
-                              <div class="title">OCT</div>
-                              <div class="value tooltips" data-original-title="42%" data-toggle="tooltip" data-placement="top">42%</div>
-                          </div>
-                          <div class="bar ">
-                              <div class="title">NOV</div>
-                              <div class="value tooltips" data-original-title="60%" data-toggle="tooltip" data-placement="top">60%</div>
-                          </div>
-                          <div class="bar ">
-                              <div class="title">DEC</div>
-                              <div class="value tooltips" data-original-title="90%" data-toggle="tooltip" data-placement="top">90%</div>
-                          </div>
-                      </div>
-                      <!--custom chart end-->
-
-                        <!--<img style="height:80%;width:80%" src="/static/img/sales.png"></img>-->
+                            <ul class="y-axis">
+                                <li>
+                                    <span>100</span>
+                                </li>
+                                <li>
+                                    <span>90</span>
+                                </li>
+                                <li>
+                                    <span>80</span>
+                                </li>
+                                <li>
+                                    <span>70</span>
+                                </li>
+                                <li>
+                                    <span>60</span>
+                                </li>
+                                <li>
+                                    <span>50</span>
+                                </li>
+                                <li>
+                                    <span>40</span>
+                                </li>
+                                <li>
+                                    <span>30</span>
+                                </li>
+                                <li>
+                                    <span>20</span>
+                                </li>
+                                <li>
+                                    <span>10</span>
+                                </li>
+                                <li>
+                                    <span>0</span>
+                                </li>
+                        </ul>
+                        <div class="bar">
+                            <div class="title">A</div>
+                            <div class="value tooltips" data-placement="top" data-toggle="tooltip" data-original-title="80%" style="height: 80%;"></div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">B</div>
+                            <div class="value tooltips" data-placement="top" data-toggle="tooltip" data-original-title="50%" style="height: 50%;"></div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">C</div>
+                            <div class="value tooltips" data-placement="top" data-toggle="tooltip" data-original-title="40%" style="height: 40%;"></div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">D</div>
+                            <div class="value tooltips" data-placement="top" data-toggle="tooltip" data-original-title="55%" style="height: 55%;"></div>
+                        </div>
+                        <div class="bar">
+                            <div class="title">E</div>
+                            <div class="value tooltips" data-placement="top" data-toggle="tooltip" data-original-title="20%" style="height: 20%;"></div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">F</div>
+                            <div class="value tooltips" data-placement="top" data-toggle="tooltip" data-original-title="39%" style="height: 39%;"></div>
+                        </div>
+                        <div class="bar">
+                            <div class="title">G</div>
+                            <div class="value tooltips" data-placement="top" data-toggle="tooltip" data-original-title="75%" style="height: 75%;"></div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">H</div>
+                            <div class="value tooltips" data-placement="top" data-toggle="tooltip" data-original-title="45%" style="height: 45%;"></div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">I</div>
+                            <div class="value tooltips" data-placement="top" data-toggle="tooltip" data-original-title="50%" style="height: 50%;"></div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">J</div>
+                            <div class="value tooltips" data-placement="top" data-toggle="tooltip" data-original-title="42%" style="height: 42%;"></div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">K</div>
+                            <div class="value tooltips" data-placement="top" data-toggle="tooltip" data-original-title="60%" style="height: 60%;"></div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">L</div>
+                            <div class="value tooltips" data-placement="top" data-toggle="tooltip" data-original-title="90%" style="height: 90%;"></div>
+                        </div>
+                        </div>
+                        <div id="snap-inc-slider" class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+                            <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"></a>
+                        </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="panel panel-default">
-                            <div class="panel-heading">销量排行前十</div>
-                            <table class="table">
-                                <tr>
-                                    <td>可口可乐</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>可口可乐</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>可口可乐</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>可口可乐</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>可口可乐</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>可口可乐</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>可口可乐</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>可口可乐</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>可口可乐</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>可口可乐</td>
-                                    <td>10</td>
-                                </tr>
-                            </table>
-                        </div> 
+                        <div class="panel-heading blue-bg">
+                            <span>Ranking List</span>
+                        </div>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-clock-o"></i>
+                                    Mail Inbox
+                                    <span class="label label-primary pull-right r-activity">19</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-calendar"></i>
+                                    Recent Activity
+                                    <span class="label label-info pull-right r-activity">11</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-envelope-o"></i>
+                                    Message
+                                    <span class="label label-success pull-right r-activity">10</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-bell-o"></i>
+                                    Notification
+                                    <span class="label label-warning pull-right r-activity">03</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-bell-o"></i>
+                                    Notification
+                                    <span class="label label-warning pull-right r-activity">03</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-bell-o"></i>
+                                    Notification
+                                    <span class="label label-warning pull-right r-activity">03</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-bell-o"></i>
+                                    Notification
+                                    <span class="label label-warning pull-right r-activity">03</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-bell-o"></i>
+                                    Notification
+                                    <span class="label label-warning pull-right r-activity">03</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-bell-o"></i>
+                                    Notification
+                                    <span class="label label-warning pull-right r-activity">03</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-bell-o"></i>
+                                    Notification
+                                    <span class="label label-warning pull-right r-activity">03</span>
+                                </a>
+                            </li>
+                            </ul>
+                        </div>
 		    </div>
 	        </div>
                 <div class="row-fluid">
-                    <div class="col-md-12"
+                    <!--<div id="default-slider" class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+                        <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"></a>
+                    </div>-->
+                    <!--<div class="col-md-12"
                         <div class="btn-group">
                             <button type="button" class="btn btn-primary">当天</button>
                             <button type="button" class="btn btn-primary">本周</button>
@@ -164,12 +230,37 @@
                             <button type="button" class="btn btn-primary">季度</button>
                             <button type="button" class="btn btn-primary">本年</button>
                         </div>
-                   </div>
+                   </div>-->
                 </div>
             </div>
         </div>
     </div>
     <script src="/static/js/bootstrap.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
+<script>
+
+      //owl carousel
+
+      $(document).ready(function() {
+          $("#owl-demo").owlCarousel({
+              navigation : true,
+              slideSpeed : 300,
+              paginationSpeed : 400,
+              singleItem : true,
+			  autoPlay:true
+
+          });
+      });
+
+      //custom select box
+
+      $(function(){
+          $('select.styled').customSelect();
+      });
+
+  </script>
+
+
 </body>
+
 </html>

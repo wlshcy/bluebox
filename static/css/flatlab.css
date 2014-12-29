@@ -802,23 +802,24 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .custom-bar-chart {
-    height: 290px;
+    height: 450px;
     margin-top: 20px;
     margin-left: 10px;
     position: relative;
-    border-bottom: 1px solid #c9cdd7;
+    //border-bottom: 1px solid #c9cdd7;
 }
 
 .custom-bar-chart .bar {
     height: 100%;
     position: relative;
-    width: 4.3%;
+    width: 4%;
     margin: 0px 2%;
     float: left;
     text-align: center;
     -webkit-border-radius: 5px 5px 0 0;
     -moz-border-radius: 5px 5px 0 0x;
-    border-radius: 5px 5px 0 0;
+    //border-radius: 5px 5px 0 0;
+    border-radius: 0;
     z-index: 10;
 }
 
@@ -833,12 +834,13 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 .custom-bar-chart .bar .value {
     position: absolute;
     bottom: 0;
-    background: #bfc2cd;
+    background: #8dd7d6;
     color: #bfc2cd;
     width: 100%;
     -webkit-border-radius: 5px 5px 0 0;
     -moz-border-radius: 5px 5px 0 0;
-    border-radius: 5px 5px 0 0;
+    //border-radius: 5px 5px 0 0;
+    border-radius: 0;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -849,7 +851,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 
 
 .custom-bar-chart .bar .value:hover {
-    background: #e8403f;
+    background: #8dd7d6;
     color: #fff;
 }
 
@@ -863,7 +865,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 .y-axis li {
     border-top: 1px dashed #dbdce0;
     display: block;
-    height: 58px;
+    height: 45px;
     width: 100%;
 }
 
@@ -873,7 +875,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 
 .y-axis li span {
     display: block;
-    margin: -10px 0 0 -25px;
+    margin: -10px 0 0 -65px;
     padding: 0 10px;
     width: 40px;
 }
@@ -3234,7 +3236,7 @@ table.sliders tr td {
 }
 
 .ui-slider-horizontal {
-    height: 8px !important;
+    height: 5px !important;
 }
 
 .ui-slider-horizontal .ui-slider-handle {
@@ -3242,7 +3244,7 @@ table.sliders tr td {
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-    background: #fff !important;
+    background: #22bacf !important;
     border: 3px solid #22bacf !important;
     border-radius: 50% !important;
     -webkit-border-radius: 50% !important;
@@ -3258,9 +3260,9 @@ table.sliders tr td {
 
 .ui-slider .ui-slider-handle {
     cursor: default;
-    height: 1.6em;
+    height: 1.3em;
     position: absolute;
-    width: 1.6em;
+    width: 1.3em;
     z-index: 2;
 }
 
@@ -3731,8 +3733,12 @@ table.sliders tr td {
     text-align: left;
 }
 
-.alt.green-bg {
-    background: #aec785;
+.panel-heading.blue-bg {
+    background: #58c9f3;
+}
+
+.panel-heading {
+    height:70px;
 }
 
 .profile-nav.alt.green-border ul > li > a:hover, .profile-nav.alt.green-border ul > li > a:focus, .profile-nav.alt.green-border ul li.active a {
