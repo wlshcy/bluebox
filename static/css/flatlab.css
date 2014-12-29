@@ -3040,7 +3040,7 @@ ul.amounts li {
 }
 
 .carousel-indicators.out {
-    bottom: -5px;
+    bottom: -35px;
 }
 
 .carousel-control {
@@ -5887,4 +5887,15 @@ a.guest-on i {
 .m-thumb img {
     width: 100%;
     border:1px solid #ddd;
+}
+
+.timeline span{
+    background: none repeat scroll 0 0 #8dd7d6;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    width: 45px;
 }
