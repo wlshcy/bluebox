@@ -365,7 +365,8 @@ body {
   font-size: 18px;
   line-height: 1.72222;
   color: #34495e;
-  background-color: #fff;
+  //background-color: #fff;
+  background-color: #f1f2f7;
   }
 a {
   color: #16a085;
@@ -1307,7 +1308,7 @@ label {
   font-size: 15px;
   line-height: 1.467;
   color: #34495e;
-  border: 2px solid #bdc3c7;
+  border: 1px solid #e2e2e4;
   border-radius: 6px;
   box-shadow: none;
   -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear;
@@ -6205,5 +6206,6 @@ footer p {
     width: 100%;
     height:100%;
     padding-top: 100px;
-    background-color: #fff;
+    //background-color: #fff;
+    background-color: #f1f2f7;
 }
