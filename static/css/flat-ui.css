@@ -1302,8 +1302,8 @@ label {
   }
 .form-control,
 .select2-search input[type="text"] {
-  height: 42px;
-  padding: 8px 12px;
+  //height: 42px;
+  //padding: 8px 12px;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.467;

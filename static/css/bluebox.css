@@ -3,3 +3,11 @@
     margin-left: auto; 
     margin-right: auto; 
 }
+
+.table > thead > tr > th {
+  border: 0;
+}
+
+.table {
+    border: none;
+}
