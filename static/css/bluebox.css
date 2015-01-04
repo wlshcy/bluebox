@@ -11,3 +11,50 @@
 .table {
     border: none;
 }
+
+.round-span {
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    background: none repeat scroll 0 0 #8dd7d6;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 15px;
+    height: 50px;
+    line-height: 45px;
+    text-align: center;
+    width: 50px;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.input-group {
+    border-collapse: separate;
+    display: inline;
+    position: relative;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+.col-fixed {
+    /* custom width */
+    width:320px;
+}
+.col-min {
+    /* custom min width */
+    min-width:320px;
+}
+.col-max {
+    /* custom max width */
+    max-width:320px;
+}
