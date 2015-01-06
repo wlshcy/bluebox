@@ -6,6 +6,7 @@ import sales.urls
 import profit.urls
 import settle.urls
 import warehouse.urls
+import notify.urls
 
 urlpatterns = patterns('',
     # Examples:
@@ -18,5 +19,6 @@ urlpatterns = patterns('',
     url(r'^profit/',include(profit.urls)),
     url(r'^settle/',include(settle.urls)),
     url(r'^warehouse/',include(warehouse.urls)),
+    url(r'^notify/',include(notify.urls)),
   
 )

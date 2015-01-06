@@ -58,3 +58,27 @@
     /* custom max width */
     max-width:320px;
 }
+
+
+.profit-bg {
+    background: none repeat scroll 0 0 #6ccac9;
+    border-radius: 4px 4px 0 0;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.profit-footer {
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 0 0 4px 4px;
+    color: #c6cad6;
+    font-size: 36px;
+    font-weight: 300;
+    padding: 18px 15px;
+    text-align: center;
+}
+.nav > li {
+    padding: 5px 5px;
+}
