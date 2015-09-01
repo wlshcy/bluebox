@@ -6,4 +6,4 @@ from django.shortcuts import render
 from django.shortcuts import render_to_response as response
 
 def index(request):
-    return response('settle.html')
+    return response('items.html')

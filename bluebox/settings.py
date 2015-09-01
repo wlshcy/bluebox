@@ -56,19 +56,19 @@ WSGI_APPLICATION = 'bluebox.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bluebox',
-        'USER': 'bluebox',
-        'PASSWORD':'bulebox',
-        'HOST':'192.168.56.104',
-        'PORT':'3306',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'bluebox',
+#        'USER': 'bluebox',
+#        'PASSWORD':'bulebox',
+#        'HOST':'192.168.56.104',
+#        'PORT':'3306',
+#    }
+#}
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,'templates/'),
+    os.path.join(BASE_DIR, 'templates/'),
 )
 
 # Internationalization

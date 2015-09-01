@@ -1,7 +1,7 @@
 from django.conf.urls import patterns,url
 
-from settle import views
+from users import views
 
 urlpatterns = patterns('',
-    url(r'^$',views.index, name='index'),
+    url(r'^$', views.index, name='index'),
 )
