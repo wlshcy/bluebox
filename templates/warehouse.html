@@ -4,8 +4,10 @@
    <link href="/static/css/bootstrap.css" rel="stylesheet">
    <link href="/static/css/bootstrap-reset.css" rel="stylesheet">
    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-   <!--<link href="/static/css/dashboard.css" rel="stylesheet">-->
-   <link href="/static/css/flat-ui.css" rel="stylesheet">
+   <link href="/static/css/new.css" rel="stylesheet">
+   <link href="/static/css/jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet">
+
+
 </head>
 
 <body> 
@@ -17,27 +19,21 @@
            <div class="collapse navbar-collapse navbar-ex1-collapse">
                <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="/sales"><i class="fa fa-fw fa-dashboard"></i> 销量统计</a>
+                        <a href="/items"><i class="fa fa-fw fa-dashboard"></i> 商品管理</a>
                     </li>
                     <li>
-                        <a href="/profit"><i class="fa fa-fw fa-bar-chart-o"></i> 利润统计</a>
+                        <a href="/orders"><i class="fa fa-fw fa-bar-chart-o"></i> 订单管理</a>
                     </li>
                     <li>
-                        <a href="/settle"><i class="fa fa-fw fa-table"></i> 商品结算</a>
+                        <a href="/users"><i class="fa fa-fw fa-table"></i> 用户管理</a>
                     </li>
                     <li class="active">
                         <a href="/warehouse"><i class="fa fa-fw fa-edit"></i>商品入库</a>
                     </li>
                     <li >
-                        <a href="/notify"><i class="fa fa-fw fa-edit"></i>商品提醒</a>
+                        <a href="/notify"><i class="fa fa-fw fa-edit"></i>发货提醒</a>
                     </li>
                 </ul>
-                <form class="navbar-form navbar-right" role="search">
-                    <div class="form-group">
-                        <input class="form-control" type="text" placeholder="搜索商品">
-                    </div>
-                </form>
-
            </div>
         </nav>
 
@@ -47,61 +43,73 @@
                 <div class="col-md-12">
                 <section class="panel">
                 <div class="panel-body">
-                    <form class="form-horizontal" action="#">
+                    <form class="form-horizontal" action="/warehouse/" method="post">
+                        {% csrf_token %}
                         <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">条形码</label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" data-mask="999-99-999-9999-9" placeholder="">
+                            <label class="col-sm-2 col-sm-2 control-label">名称</label>
+                            <div class="col-sm-5">
+                                <input class="form-control" type="text" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">名称</label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" data-mask="999 99 999 9999 9" placeholder="">
+                            <label class="col-sm-2 col-sm-2 control-label">图片</label>
+                            <div class="col-sm-5">
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                        <img data-src="holder.js/100%x100%" alt="...">
+                                    </div>
+                                    <div>
+                                        <span class="btn btn-default btn-file">
+                                            <span class="fileinput-new">选择图片</span>
+                                            <span class="fileinput-exists">更换</span>
+                                            <input type="file" name="...">
+                                        </span>
+                                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">移除</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">进价</label>
+                            <label class="col-sm-2 control-label">描述</label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" data-mask="999/99/999/9999/9" placeholder="">
+                                <input class="form-control" type="text" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">单价</label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" data-mask="999.999.999.9999" placeholder="">
+                            <label class="col-sm-2 control-label">规格</label>
+                            <div class="col-sm-5">
+                                <input class="form-control" type="text" placeholder="">
+                            </div>
+                            <label class="co-sm-2 control-label">斤</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">价格</label>
+                            <div class="col-sm-5">
+                                <input class="form-control" type="text" placeholder="">
+                            </div>
+                            <label class="co-sm-2 control-label">元</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">市场价</label>
+                            <div class="col-sm-5">
+                                <input class="form-control" type="text" placeholder="">
+                            </div>
+                            <label class="co-sm-2 control-label">元</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">产地</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="text" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">数量</label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" data-mask="9999:9999:9999:9:999:9999:9999:9999" placeholder="">
+                            <label class="col-sm-2 control-label">库存</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" type="text" placeholder="">
                             </div>
+                            <label class="co-sm-2 control-label">斤</label>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">商品类型</label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" data-mask="99-9999999" placeholder="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">生产日期</label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" data-mask="(999) 999-9999" placeholder="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">保质期</label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" data-mask="$ 999,999,999.99" placeholder="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">厂家</label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" data-mask="99/99/9999" placeholder="">
-                            </div>
-                        </div>
+                        <input type="submit" />保存
                     </form>
                 </div>
                 </section>
@@ -109,7 +117,7 @@
                         <div class="panel-body">
                             <div class="btn-group btn-group-justified">
                                 <a class="btn btn-success">添加</a>
-                                <a class="btn btn-info">清空</a>
+                                <!--<a class="btn btn-info">清空</a>-->
                             </div>
                         </div>
                 </section>
@@ -123,7 +131,8 @@
             </div>
         </div>
     </div>
-    <script src="/static/js/bootstrap.js"></script>
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/css/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
 </body>
 </html>
