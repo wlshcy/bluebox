@@ -4,10 +4,12 @@ from django.shortcuts import render
 
 
 from django.shortcuts import render_to_response as response
+from .models import Item
 
 
 def index(request):
-    return response('items.html')
+
+    return response('items.html', {'items': Item.objects})
 
 def show(request):
     pass
