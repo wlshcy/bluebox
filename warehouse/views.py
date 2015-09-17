@@ -5,11 +5,12 @@ from django.template import RequestContext
 
 from django.shortcuts import render_to_response as response
 from django.http import HttpResponseRedirect
-from PIL import Image
+# from PIL import Image
 from .forms import AddItemForm
-from .models import Item
-from bluebox.settings import IMAGE_UPLOAD_DIR, IMAGE_URL
-import uuid
+from .models import Item, Photo
+# from bluebox.settings import IMAGE_UPLOAD_DIR, IMAGE_URL
+# import uuid
+
 
 def index(request):
     if request.method == "POST":
@@ -24,16 +25,12 @@ def index(request):
             invent = form.cleaned_data['invent']
 
             photo = form.cleaned_data['photo']
-            img = Image.open(photo)
-            file_name = "{}.png".format(uuid.uuid4().hex)
-            path = "{}{}".format(IMAGE_UPLOAD_DIR, file_name)
-            img.save(path, 'PNG')
-            url = IMAGE_URL + file_name
-            print(url)
-            form.cleaned_data.update({'photo': url})
+            photo = Photo(photo)
+            photo.save()
+            # form.cleaned_data.update({'photo': photo.url})
 
             item = Item(name=name,
-                        photo=url,
+                        photo=photo.url,
                         desc=desc,
                         size=size,
                         price=price,

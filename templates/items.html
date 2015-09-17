@@ -45,6 +45,7 @@
                             <th hidden="true">ID</th>
                             <th>名称</th>
                             <th>图片</th>
+                            <th>产地</th>
                             <th>规格(斤)</th>
                             <th>价格(元)</th>
                             <th>市场价(元)</th>
@@ -62,11 +63,12 @@
                                     <td>
                                         <img src="{{ item.photo }}" alt="" width="50px" height="50px">
                                     </td>
-                                    <td >{{ item.human_size }}</td>
-                                    <td> {{ item.human_price }}</td>
-                                    <td >{{ item.human_mprice }}</td>
-                                    <td >{{ item.human_invent }}</td>
-                                    <td >{{ item.human_sales }}</td>
+                                    <td >{{ item.origin }}</td>
+                                    <td >{{ item.size }}</td>
+                                    <td> {{ item.price }}</td>
+                                    <td >{{ item.mprice }}</td>
+                                    <td >{{ item.invent }}</td>
+                                    <td >{{ item.sales }}</td>
                                     <td >{{ item.remains }}</td>
                                     <td >{{ item.created }}</td>
                                     <td >
