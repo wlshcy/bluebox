@@ -1,25 +1,17 @@
+
 from django.shortcuts import render
-
-# Create your views here.
-
-
-from django.shortcuts import render_to_response as response
 from .models import Item
+from django.http import HttpResponseRedirect
 
 
 def index(request):
+    return render(request, 'items.html', {'items': Item.objects})
 
-    return response('items.html', {'items': Item.objects})
-
-def show(request):
-    pass
-
-def create(request):
-    pass
-
-def update(request):
-    pass
 
 def delete(request):
-    pass
+    if request.method == 'POST':
+        id = request.POST['id']
+        item = Item.objects(id=id)[0]
+        item.delete()
 
+    return HttpResponseRedirect('/items/')

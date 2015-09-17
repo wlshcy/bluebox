@@ -1,7 +1,7 @@
 # from django.db import models
 
 # Create your models here.
-
+import time
 from mongoengine import *
 
 from bluebox.settings import DATABASE
@@ -18,7 +18,8 @@ class Item(Document):
     mprice = FloatField(required=True)
     origin = StringField(required=True)
     invent = IntField(required=True)
-    sales = FloatField(required=False, default=0)
+    sales = FloatField(required=False)
+    created = DateTimeField()
 
     # def human_price(self):
     #     return self.price / 100
@@ -34,3 +35,6 @@ class Item(Document):
     #
     # def human_size(self):
     #     return self.size / 500
+
+    def human_created(self):
+        return "%s-%s-%s" % (self.created.year, self.created.month, self.created.day)

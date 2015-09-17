@@ -63,18 +63,19 @@
                                     <td>
                                         <img src="{{ item.photo }}" alt="" width="50px" height="50px">
                                     </td>
-                                    <td >{{ item.origin }}</td>
+                                    <td>{{ item.origin }}</td>
                                     <td >{{ item.size }}</td>
                                     <td> {{ item.price }}</td>
                                     <td >{{ item.mprice }}</td>
                                     <td >{{ item.invent }}</td>
                                     <td >{{ item.sales }}</td>
                                     <td >{{ item.remains }}</td>
-                                    <td >{{ item.created }}</td>
+                                    <td >{{ item.human_created }}</td>
                                     <td >
-                                        <!--<div class="btn-group btn-group-sm pull-right">-->
-                                            <!--<button id="preview" href="/admin/files/show" class="btn btn-mini container-info">详情-->
-                                            <!--</button>-->
+                                        <div class="btn-group btn-group-sm pull-right">
+                                            <button class="btn btn-mini btn-danger delete-item">删除
+                                            </button>
+                                        </div>
                                             <!--<button class="btn btn-custom dropdown-toggle" data-toggle="dropdown">-->
                                                 <!--<span class="caret"></span>-->
                                             <!--</button>-->
@@ -93,7 +94,17 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="/static/js/bootstrap.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
+    <script>
+        $(".delete-item").click(function() {
+            var $row = $(this).closest("tr");
+            var $text = $row.find(".fp").text();
+            var $url = "/items/delete/";
+            var posting = $.post( $url, { id: $text, 'csrfmiddlewaretoken': '{{ csrf_token }}' } );
+            posting.done(function( data ) { location.reload() });
+        });
+    </script>
 </body>
 </html>
