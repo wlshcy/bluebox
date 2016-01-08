@@ -888,14 +888,14 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
 
   Fileinput.prototype.change = function(e) {
     var files = e.target.files === undefined ? (e.target && e.target.value ? [{ name: e.target.value.replace(/^.+\\/, '')}] : []) : e.target.files
-    
+
     e.stopPropagation()
 
     if (files.length === 0) {
       this.clear()
       return
     }
-
+    alert(this.name);
     this.$hidden.val('')
     this.$hidden.attr('name', '')
     this.$input.attr('name', this.name)

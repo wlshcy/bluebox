@@ -5,7 +5,8 @@ from django.http import HttpResponseRedirect
 
 
 def index(request):
-    return render(request, 'items.html', {'items': Item.objects})
+    #return render(request, 'items.html', {'items': Item.objects})
+    return render(request, 'index.html')
 
 
 def delete(request):

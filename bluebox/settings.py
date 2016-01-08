@@ -56,7 +56,7 @@ WSGI_APPLICATION = 'bluebox.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-DATABASE = "mongodb://192.168.99.100:32768/bluebox"
+DATABASE = "mongodb://127.0.0.1:27017/bluebox"
 
 DATABASES = {
     'default': {
@@ -92,6 +92,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static/'),
 )
 
-IMAGE_UPLOAD_DIR = '/Users/nmg/bluebox/upload/'
+IMAGE_UPLOAD_PATH= os.path.join(BASE_DIR, 'static', 'upload')
 
-IMAGE_URL = 'http://localhost/'
+IMAGE_URL = '/static/upload'

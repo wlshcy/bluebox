@@ -3,7 +3,7 @@
 
 from mongoengine import *
 
-from bluebox.settings import DATABASE, IMAGE_UPLOAD_DIR, IMAGE_URL
+from bluebox.settings import DATABASE, IMAGE_UPLOAD_PATH, IMAGE_URL
 
 
 from PIL import Image
@@ -39,7 +39,7 @@ class Photo(object):
 
     @property
     def path(self):
-        return os.path.join(IMAGE_UPLOAD_DIR, self.name)
+        return os.path.join(IMAGE_UPLOAD_PATH, self.name)
 
     @property
     def url(self):
