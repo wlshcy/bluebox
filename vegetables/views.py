@@ -20,7 +20,7 @@ def show(request):
     veg = Veg.objects(id=id)[0]
 
     return response('veg-detail.html',
-                    {'id': veg.id, 'name': veg.name, 'desc': veg.desc,
+                    {'id': veg.id, 'slide': veg.slide, 'name': veg.name, 'desc': veg.desc,
                      'size': veg.size, 'price': veg.price,
                      'mprice': veg.mprice, 'origin': veg.origin, 'photo': veg.photo},
                     context_instance=RequestContext(request))
@@ -29,6 +29,7 @@ def show(request):
 def create(request):
     form = CreateVegForm(request.POST, request.FILES)
     if form.is_valid():
+        slide = form.cleaned_data['slide']
         name = form.cleaned_data['name']
         desc = form.cleaned_data['desc']
         size = form.cleaned_data['size']
@@ -40,7 +41,8 @@ def create(request):
         photo = Photo(photo)
         photo.save()
 
-        veg = Veg(name=name,
+        veg = Veg(slide=slide,
+		  name=name,
                   photo=photo.url,
                   desc=desc,
                   size=size,
@@ -55,10 +57,12 @@ def create(request):
 
 
 def update(request):
+    print(request.POST)
     form = UpdateVegForm(request.POST, request.FILES)
     if form.is_valid():
         id = request.POST['id']
         veg = Veg.objects(id=id)[0]
+        veg.slide = form.cleaned_data['slide']
         veg.name = form.cleaned_data['name']
         veg.desc = form.cleaned_data['desc']
         veg.size = form.cleaned_data['size']

@@ -16,13 +16,15 @@ connect(host=DATABASE)
 
 
 class Frt(Document):
+    slide = StringField(required=True, default=1)
     name = StringField(required=True, max_length=30)
     photo = StringField(required=True)
-    desc = StringField(required=True, max_length=15)
+    desc = StringField(required=True, max_length=50)
     size = FloatField()
     price = FloatField()
     mprice = FloatField()
     origin = StringField()
+    sales = FloatField(default=0)
     created = DateTimeField(default=datetime.datetime.now)
 
 

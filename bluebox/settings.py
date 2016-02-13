@@ -94,4 +94,4 @@ STATICFILES_DIRS = (
 
 IMAGE_UPLOAD_PATH= os.path.join(BASE_DIR, 'static', 'upload')
 
-IMAGE_URL = '/static/upload'
+IMAGE_URL = 'http://192.168.1.100:8080'

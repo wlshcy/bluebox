@@ -3,6 +3,7 @@ from django import forms
 
 
 class CreateVegForm(forms.Form):
+    slide = forms.CharField(required=True)
     name = forms.CharField(required=True)
     photo = forms.ImageField(required=True)
     desc = forms.CharField(required=True)
@@ -13,6 +14,7 @@ class CreateVegForm(forms.Form):
 
 
 class UpdateVegForm(forms.Form):
+    slide = forms.CharField(required=True)
     name = forms.CharField(required=True)
     photo = forms.ImageField(required=False)
     desc = forms.CharField(required=True)
