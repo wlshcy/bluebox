@@ -56,7 +56,7 @@ WSGI_APPLICATION = 'bluebox.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-DATABASE = "mongodb://127.0.0.1:27017/bluebox"
+DATABASE = "mongodb://101.200.164.171:27017/bluebox"
 
 DATABASES = {
     'default': {

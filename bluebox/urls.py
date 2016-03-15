@@ -12,6 +12,7 @@ import vegetables.urls
 import fruits.urls
 import meats.urls
 import specialties.urls
+import combos.urls
 
 
 urlpatterns = patterns('',
@@ -32,5 +33,7 @@ urlpatterns = patterns('',
     url(r'^fruits/', include(fruits.urls)),
     #url(r'^meat/', include(meats.urls)),
     url(r'^specialties/', include(specialties.urls)),
+    url(r'^combos/', include(combos.urls)),
+
   
 )
