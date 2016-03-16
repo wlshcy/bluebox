@@ -57,7 +57,6 @@ def create(request):
 
 
 def update(request):
-    print(request.POST)
     form = UpdateComboForm(request.POST, request.FILES)
     if form.is_valid():
         id = request.POST['id']
@@ -76,6 +75,8 @@ def update(request):
             photo.save()
 	    comb.photo = photo
         combo.save()
+    else:
+        print('表单验证失败')
         
     return HttpResponseRedirect('/combos/')
 

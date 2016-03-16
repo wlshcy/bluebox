@@ -431,7 +431,7 @@
                         <div class="clearfix"></div>
   		    </div>
   		    <div class="panel-body">
-			<form id="vegetables-edit" class="form-horizontal" action="/vegetables/update" method="POST" enctype='multipart/form-data'>
+			<form id="combos-edit" class="form-horizontal" action="/combos/update" method="POST" enctype='multipart/form-data'>
                         {% csrf_token %}
                             <input name="id" value="{{ id }}" style="display:none;">
 			    <div class="form-group">
@@ -480,97 +480,80 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--<div class="col-sm-2">
-                                    <button id="photo" class="btn btn-sm btn-default edit">
-				        <li class="fa fa-fw fa-edit"></li>编辑
-                                    </button>
-                                    <button id="photo" class="btn btn-sm btn-success save" style="display:none">
-				        <li class="fa fa-fw fa-floppy-o"></li>保存
-                                    </button>
-                                </div>-->
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">描述</label>
+			    <div class="form-group">
+                                <label class="col-sm-2 control-label">适用人数</label>
                                 <div class="col-sm-5">
-                                    <input class="form-control" type="text" placeholder="" name="desc" value="{{ desc }}" disabled="disabled" onfocus="this.select();">
+                                    <select  class="form-control" id="num" name="num">
+                                        <option value=-1>选择家庭人口</option>
+                                        {% if num == 2 %}
+                                        <option value=2 selected="selected">2</option>
+                                        {% else %}
+                                        <option value=2>2</option>
+                                        {% endif %}
+                                        {% if num == 3 %}
+                                        <option value=3 selected="selected">3</option>
+                                        {% else %}
+                                        <option value=3>3</option>
+                                        {% endif %}
+                                        {% if num == 4 %}
+                                        <option value=4 selected="selected">4</option>
+                                        {% else %}
+                                        <option value=4>4</option>
+                                        {% endif %}
+                                        {% if num == 5 %}
+                                        <option value=5 selected="selected">5</option>
+                                        {% else %}
+                                        <option value=5>5</option>
+                                        {% endif %}
+                                    </select>
                                 </div>
-                                <!--<div class="col-sm-2">
-                                    <button id="desc" class="btn btn-sm btn-default edit">
-				        <li class="fa fa-fw fa-edit"></li>编辑
-                                    </button>
-                                    <button id="desc" class="btn btn-sm btn-success save" style="display:none">
-				        <li class="fa fa-fw fa-floppy-o"></li>保存
-                                    </button>
-                                </div>-->
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">规格</label>
+                                <label class="col-sm-2 control-label">配送周期</label>
                                 <div class="col-sm-5">
                                     <div class="input-group">
-                                        <input class="form-control" type="text" placeholder="" name="size" value="{{ size }}" disabled="disabled" onfocus="this.select();">
-                                        <span class="input-group-addon" id="basic-addon2">克/份</span>
+                                       <input class="form-control" type="text" placeholder="" name="long" value={{ long }}>
+                                       <span class="input-group-addon" id="basic-addon2">周</span>
                                     </div>
                                 </div>
-                                <!--<label class="co-sm-2 control-label">克/份</label>-->
-                                <!--<div class="col-sm-2">
-                                    <button id="size" class="btn btn-sm btn-default edit">
-				        <li class="fa fa-fw fa-edit"></li>编辑
-                                    </button>
-                                    <button id="size" class="btn btn-sm btn-success save" style="display:none">
-				        <li class="fa fa-fw fa-floppy-o"></li>保存
-                                    </button>
-                                </div>-->
                             </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">配送频次</label>
+                                <div class="col-sm-5">
+                                    <select  class="form-control" id="freq" name="freq">
+                                        <option value=-1>选择每周配送的次数</option>
+                                        {% if freq == 1 %}
+                                        <option value=1 selected="selected">1次</option>
+                                        {% else %}
+                                        <option value=1>1次</option>
+                                        {% endif %}
+                                        {% if freq == 2 %}
+                                        <option value=2 selected="selected">2次</option>
+                                        {% else %}
+                                        <option value=2>2次</option>
+                                        {% endif %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">单次配送重量</label>
+                                <div class="col-sm-5">
+                                    <div class="input-group">
+                                       <input class="form-control" type="text" placeholder="" name="weight" value={{weight}}>
+                                       <span class="input-group-addon" id="basic-addon2">斤</span>
+                                    </div>
+                                </div>
+                            </div> 
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">价格</label>
                                 <div class="col-sm-5">
                                     <div class="input-group">
-                                        <input class="form-control" type="text" placeholder="" name="price" value="{{ price }}" disabled="disabled" onfocus="this.select();">
-                                        <span class="input-group-addon" id="basic-addon2">元/份</span>
+                                       <input class="form-control" type="text" placeholder="" name="price" value={{ price }}>
+                                       <span class="input-group-addon" id="basic-addon2">元</span>
                                     </div>
                                 </div>
-                                <!--<label class="co-sm-2 control-label">元</label>-->
-                                <!--<div class="col-sm-2">
-                                    <button id="price" class="btn btn-sm btn-default edit">
-				        <li class="fa fa-fw fa-edit"></li>编辑
-                                    </button>
-                                    <button id="price" class="btn btn-sm btn-success save" style="display:none">
-				        <li class="fa fa-fw fa-floppy-o"></li>保存
-                                    </button>
-                                </div>-->
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">市场价</label>
-                                <div class="col-sm-5">
-                                    <div class="input-group">
-                                        <input class="form-control" type="text" placeholder="" name="mprice" value="{{ mprice }}" disabled="disabled" onfocus="this.select();">
-                                        <span class="input-group-addon" id="basic-addon2">元/份</span>
-                                    </div>
-                                </div>
-                                <!--<label class="co-sm-2 control-label">元</label>-->
-                                <!--<div class="col-sm-2">
-                                    <button id="mprice" class="btn btn-sm btn-default edit">
-				        <li class="fa fa-fw fa-edit"></li>编辑
-                                    </button>
-                                    <button id="mprice" class="btn btn-sm btn-success save" style="display:none">
-				        <li class="fa fa-fw fa-floppy-o"></li>保存
-                                    </button>
-                                </div>-->
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">产地</label>
-                                <div class="col-sm-5">
-                                    <input class="form-control" type="text" placeholder="" name="origin" value="{{ origin }}" disabled="disabled" onfocus="this.select();">
-                                </div>
-                                <!--<div class="col-sm-2">
-                                    <button id="origin" class="btn btn-sm btn-default edit">
-				        <li class="fa fa-fw fa-edit"></li>编辑
-                                    </button>
-                                    <button id="origin" class="btn btn-sm btn-success save" style="display:none">
-				        <li class="fa fa-fw fa-floppy-o"></li>保存
-                                    </button>
-                                </div>-->
-                            </div>
+                            </div> 
                         <form/>
   		    </div>
   		    <div class="panel-footer">
@@ -635,72 +618,8 @@
             this.style.display="none";
 	});    
         $(".save").click(function() {
-            $("#vegetables-edit").submit();
-            //name = this.id;
-            //var obj = this.previousElementSibling || this.previousSibling;
-	    //$(obj).removeAttr('style');
-            //this.style.display="none";
-	    //$("input[name=" + name + "]").attr('disabled', 'disabled');
-            //value = $("input[name=" + name + "]").val();
-            //href = '/vegetables/update';
-            //$.post(href, {name: value, 'csrfmiddlewaretoken': '{{ csrf_token }}'}); 
-            //$("input[name=name]").attr('disabled', 'disabled');
-            //$("input[name=photo]").attr('disabled', 'disabled');
-            //$("input[name=desc]").attr('disabled', 'disabled');
-            //$("input[name=size]").attr('disabled', 'disabled');
-            //$("input[name=price]").attr('disabled', 'disabled');
-            //$("input[name=mprice]").attr('disabled', 'disabled');
-            //$("input[name=origin]").attr('disabled', 'disabled');
-            //var obj = this.previousElementSibling || this.previousSibling;
-            //$(obj).attr('style', 'margin-top:-20px;');
-	    ////$(obj).removeAttr('style');
-            //this.style.display="none";
-            //history.back();
-
+            $("#combos-edit").submit();
         });
-        //function getBase64Image(img) {
-      	//    var canvas = document.createElement("canvas");
-        //    canvas.width = img.width;
-        //    canvas.height = img.height;
-
-        //    var ctx = canvas.getContext("2d");
-        //    ctx.drawImage(img, 0, 0, img.width, img.height);
-
-        //    var dataURL = canvas.toDataURL("image/png");
-        //    var blob = dataURLtoBlob(dataRUL);
-        //    alert(blob);
-        //    return dataURL
-
-    	//};
-        //$("input[type=file]").change(function(event){
-        //    for (i in event.target.files[0]){
-        //        alert(event.target.files[0].i);
-        //    }
-        //    alert(event.target.files[0]);
-        //});
-        //$(document).ready(function(){
-        //    var img = document.createElement('img');
-        //    img.src = '{{ photo }}';
-        //    img.onload =function() {
-        //        var data = getBase64Image(img);
-        //        var $img = $('<img>')
-        //        $img[0].src = data;
-        //        var preview = $(".fileinput-preview");
-        //        //$("img").attr('src',data);
-        //        preview.html($img);
-        //        console.log(data);
-        //    }
-        //    
-        //    //var reader = new FileReader();
-	//    //reader.onload = function ( event ) { 
-	//    //    var data = event.target.result;
-	//    //    var img = document.createElement("img");
-	//    //    img.src = data;
-        //    //    var preview = $(".fileinput-preview");
-        //    //    preview.html(img);
-        //    //}
-        //    //reader.readAsDataURL('{{ photo }}');
-	//});
     </script>
 </body>
 </html>
