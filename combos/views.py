@@ -73,7 +73,7 @@ def update(request):
             photo = form.cleaned_data['photo']
             photo = Photo(photo)
             photo.save()
-	    comb.photo = photo
+	    combo.photo = photo
         combo.save()
     else:
         print('表单验证失败')
