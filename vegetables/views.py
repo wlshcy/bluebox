@@ -74,7 +74,7 @@ def update(request):
             photo = form.cleaned_data['photo']
             photo = Photo(photo)
             photo.save()
-	    veg.photo = photo
+	    veg.photo = photo.url
         veg.save()
         
     return HttpResponseRedirect('/vegetables/')
