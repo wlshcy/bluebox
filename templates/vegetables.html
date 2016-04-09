@@ -1,4 +1,4 @@
-
+{% load pagination_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -508,7 +508,6 @@
                             </div>
                         </div>
                     </div>
-
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title pull-left" style="padding-top: 8px;">
@@ -533,6 +532,7 @@
                                 <th style="width:80px;" class="text-center">操作</th>
                             </thead>
                             <tbody>
+                            {% autopaginate vegs 10 %}
                                 {% for veg in vegs%}
                                     <tr>
                                         <td class="fp" hidden="true">{{ veg.id }}</td>
@@ -610,4 +610,4 @@
     </script>
 </body>
 </html>
-
+{% paginate %}
