@@ -4,7 +4,7 @@ from django.views.generic import RedirectView
 
 import notifications.urls
 import items.urls
-import vegetables.urls
+import specials.urls
 import users.urls
 import orders.urls
 
@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^$', RedirectView.as_view(url='/notifications/')),
     url(r'^notifications/', include(notifications.urls)),
     url(r'^items/', include(items.urls)),
+    url(r'^specials/', include(specials.urls)),
     url(r'^users/', include(users.urls)),
     url(r'^orders/', include(orders.urls)),
 )
