@@ -2,7 +2,6 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.views.generic import RedirectView
 
-import notifications.urls
 import items.urls
 import specials.urls
 import users.urls
@@ -14,8 +13,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', RedirectView.as_view(url='/notifications/')),
-    url(r'^notifications/', include(notifications.urls)),
+    url(r'^$', RedirectView.as_view(url='/items/')),
     url(r'^items/', include(items.urls)),
     url(r'^specials/', include(specials.urls)),
     url(r'^users/', include(users.urls)),
