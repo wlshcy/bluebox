@@ -15,7 +15,7 @@ import datetime
 connect(host=DATABASE)
 
 
-class Item(Document):
+class Special(Document):
     name = StringField(required=True, max_length=30)
     photo = StringField(required=True)
     desc = StringField(required=True, max_length=50)
