@@ -1,6 +1,6 @@
 from django.conf.urls import patterns,url
 
-from promotions import views
+from specials import views
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
