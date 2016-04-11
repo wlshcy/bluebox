@@ -1,3 +1,4 @@
+from django.conf.urls import patterns,url
 from summaries import views
 
 urlpatterns = patterns('',
