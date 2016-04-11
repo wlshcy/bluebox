@@ -455,7 +455,7 @@
                                         <div>
                                             <span class="btn btn-default btn-file">
                                                 <span class="fileinput-new" disabled="disabled" btn-primary>选择图片</span>
-                                                <span class="fileinput-exists">更换</span>
+                                                <span class="fileinput-exists change" disabled="disabled">更换</span>
                                                 <input type="file" name="photo" disabled="disabled">
                                             </span>
                                             <!--<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">移除</a>-->
@@ -603,6 +603,7 @@
             //var obj = this.nextElementSibling||this.nextSibling;
             //$(obj).removeAttr('style');
             //this.style.display="none";
+            $(".change").removeAttr('disabled');
             $("input[name=name]").removeAttr('disabled');
             $("input[name=photo]").removeAttr('disabled');
             $("input[name=desc]").removeAttr('disabled');
