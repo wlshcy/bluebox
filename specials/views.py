@@ -40,7 +40,7 @@ def create(request):
         photo = Photo(photo)
         photo.save()
 
-        special = Specail(
+        special = Special(
 		  name=name,
                   photo=photo.url,
                   desc=desc,
