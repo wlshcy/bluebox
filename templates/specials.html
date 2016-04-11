@@ -522,20 +522,20 @@
                                 <th style="width:80px;" class="text-center">操作</th>
                             </thead>
                             <tbody>
-                            {% autopaginate vegs 10 %}
-                                {% for veg in vegs%}
+                            {% autopaginate specials 10 %}
+                                {% for special in specials%}
                                     <tr>
-                                        <td class="fp" hidden="true">{{ veg.id }}</td>
-                                        <td >{{ veg.name }}</td>
-                                        <td class="text-center"><img src="{{ veg.photo }}" style="width:30px;height:30px;"></td>
-                                        <td >{{ veg.size }}</td>
-                                        <td> {{ veg.price }}</td>
-                                        <td >{{ veg.mprice }}</td>
-                                        <td >{{ veg.origin }}</td>
-                                        <td >{{ veg.sales }}</td>
+                                        <td class="fp" hidden="true">{{ special.id }}</td>
+                                        <td >{{ special.name }}</td>
+                                        <td class="text-center"><img src="{{ special.photo }}" style="width:30px;height:30px;"></td>
+                                        <td >{{ special.size }}</td>
+                                        <td> {{ special.price }}</td>
+                                        <td >{{ special.mprice }}</td>
+                                        <td >{{ special.origin }}</td>
+                                        <td >{{ special.sales }}</td>
                                         <td >
                                             <div class="btn-group btn-group-sm pull-right">
-					        <input type=button class="btn btn-mini btn-info" onClick="parent.location='show?id={{ veg.id }}'" value='查看/编辑'>
+					        <input type=button class="btn btn-mini btn-info" onClick="parent.location='show?id={{ special.id }}'" value='查看/编辑'>
                                             </div>
                                         </td>
                                     </tr>
