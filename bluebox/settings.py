@@ -103,6 +103,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static/'),
 )
 
-IMAGE_UPLOAD_PATH= os.path.join(BASE_DIR, 'static', 'upload')
+IMAGE_UPLOAD_PATH= os.path.join('/home', 'upload')
 
 IMAGE_URL = 'http://img.freshtaste.me:8080'
