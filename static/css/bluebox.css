@@ -87,3 +87,10 @@
 */
 
 
+.page-header {
+    border-bottom: 0px;
+}
+
+.new-panel {
+    margin-top: 60px;
+}

@@ -84,3 +84,7 @@ def delete(request):
     return HttpResponseRedirect('/specials/')
 
 
+def new(request):
+    
+    return response('special-new.html', context_instance=RequestContext(request))
+
