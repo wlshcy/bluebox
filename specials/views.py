@@ -25,6 +25,9 @@ def show(request):
                      'mprice': special.mprice, 'origin': special.origin, 'photo': special.photo},
                     context_instance=RequestContext(request))
 
+def new(request):
+    
+    return response('special-new.html', context_instance=RequestContext(request))
 
 def create(request):
     form = CreateSpecialForm(request.POST, request.FILES)
