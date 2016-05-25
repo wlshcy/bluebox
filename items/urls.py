@@ -8,4 +8,5 @@ urlpatterns = patterns('',
     url(r'^create$', views.create, name='create'),
     url(r'^delete$', views.delete, name='delete'),
     url(r'^update$', views.update, name='update'),
+    url(r'^new$', views.new, name='new'),
 )

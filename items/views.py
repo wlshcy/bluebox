@@ -54,6 +54,9 @@ def create(request):
 
     return HttpResponseRedirect('/items/')
 
+def new(request):
+    
+    return response('item-new.html', context_instance=RequestContext(request))
 
 def update(request):
     form = UpdateItemForm(request.POST, request.FILES)
