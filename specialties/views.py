@@ -70,11 +70,11 @@ def update(request):
         spe.mprice = form.cleaned_data['mprice']
         spe.origin = form.cleaned_data['origin']
 
-	if len(request.FILES):
+        if len(request.FILES):
             photo = form.cleaned_data['photo']
             photo = Photo(photo)
             photo.save()
-	    spe.photo = photo
+            spe.photo = photo
         spe.save()
         
     return HttpResponseRedirect('/specialties/')

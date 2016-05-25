@@ -69,11 +69,11 @@ def update(request):
         combo.long = form.cleaned_data['long']
         combo.freq = form.cleaned_data['freq']
 
-	if len(request.FILES):
+        if len(request.FILES):
             photo = form.cleaned_data['photo']
             photo = Photo(photo)
             photo.save()
-	    combo.photo = photo.url
+            combo.photo = photo.url
         combo.save()
     else:
         print('表单验证失败')

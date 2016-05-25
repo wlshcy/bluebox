@@ -70,11 +70,11 @@ def update(request):
         veg.mprice = form.cleaned_data['mprice']
         veg.origin = form.cleaned_data['origin']
 
-	if len(request.FILES):
+        if len(request.FILES):
             photo = form.cleaned_data['photo']
             photo = Photo(photo)
             photo.save()
-	    veg.photo = photo.url
+            veg.photo = photo.url
         veg.save()
         
     return HttpResponseRedirect('/vegetables/')
