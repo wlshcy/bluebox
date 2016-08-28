@@ -12,14 +12,14 @@ from .models import Special, Photo
 
 def index(request):
     
-    return response('specials.html', {'specials': Special.objects.order_by('-created')}, context_instance=RequestContext(request))
+    return response('items/specials.html', {'specials': Special.objects.order_by('-created')}, context_instance=RequestContext(request))
 
 
 def show(request):
     id = request.GET.get('id')
     special = Special.objects(id=id)[0]
 
-    return response('special.html',
+    return response('items/special.html',
                     {'id': special.id,'name': special.name, 'desc': special.desc,
                      'size': special.size, 'price': special.price,
                      'mprice': special.mprice, 'origin': special.origin, 'photo': special.photo},
@@ -27,7 +27,7 @@ def show(request):
 
 def new(request):
     
-    return response('special-new.html', context_instance=RequestContext(request))
+    return response('items/special-new.html', context_instance=RequestContext(request))
 
 def create(request):
     form = CreateSpecialForm(request.POST, request.FILES)
@@ -89,5 +89,5 @@ def delete(request):
 
 def new(request):
     
-    return response('special-new.html', context_instance=RequestContext(request))
+    return response('items/special-new.html', context_instance=RequestContext(request))
 
