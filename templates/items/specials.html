@@ -238,13 +238,12 @@
                             <thead>
                                 <th hidden="true">ID</th>
                                 <th>名称</th>
-                                <th style="width:80px;" class="text-center">图片</th>
-                                <th>规格(克/份)</th>
-                                <th>原价(元)</th>
-                                <th>促销价(元)</th>
-                                <th>产地</th>
-                                <th>销量(份)</th>
-                                <th style="width:80px;" class="text-center">操作</th>
+                                <th style="width:10%">规格(克/份)</th>
+                                <th style="width:15%">原价(元)</th>
+                                <th style="width:15%">促销价(元)</th>
+                                <th style="width:10%">产地</th>
+                                <th style="width:10%">销量(份)</th>
+                                <th style="width:10%;" class="text-center">操作</th>
                             </thead>
                             <tbody>
                             {% autopaginate specials 10 %}
@@ -252,10 +251,9 @@
                                     <tr>
                                         <td class="fp" hidden="true">{{ special.id }}</td>
                                         <td >{{ special.name }}</td>
-                                        <td class="text-center"><img src="{{ special.photo }}" style="width:30px;height:30px;"></td>
                                         <td >{{ special.size }}</td>
                                         <td> {{ special.price }}</td>
-                                        <td >{{ special.mprice }}</td>
+                                        <td >{{ special.sprice }}</td>
                                         <td >{{ special.origin }}</td>
                                         <td >{{ special.sales }}</td>
                                         <td >

@@ -15,13 +15,13 @@ import datetime
 connect(host=DATABASE)
 
 
-class Special(Document):
+class OnSale(Document):
     name = StringField(required=True, max_length=30)
     photo = StringField(required=True)
     desc = StringField(required=True, max_length=50)
     size = FloatField()
     price = FloatField()
-    mprice = FloatField()
+    sprice = FloatField()
     origin = StringField()
     sales = FloatField(default=0)
     created = DateTimeField(default=datetime.datetime.now)
