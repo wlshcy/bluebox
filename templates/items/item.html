@@ -111,69 +111,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> 用户管理<!--<span class="fa arrow"></span>--></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/users">管理员</a>
-                                </li>
-                                <li>
-                                    <a href="/users">普通用户</a>
-                                </li>
-                                <li>
-                                    <a href="/users">配送员</a>
-                                </li>
-                                <li>
-                                    <a href="/users">质检员</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> 区域管理<!--<span class="fa arrow">--></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">东区</a>
-                                </li>
-                                <li>
-                                    <a href="#">西区</a>
-                                </li>
-                                <li>
-                                    <a href="#">南区</a>
-                                </li>
-                                <li>
-                                    <a href="#">北区</a>
-                                </li>
-                                <!--<li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                </li>-->
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> 自提点管理<!--<span class="fa arrow"></span>--></a>
-                            <!--<ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html"></a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>-->
-                            <!-- /.nav-second-level -->
+                            <a href="/users"><i class="fa fa-wrench fa-fw"></i> 用户管理<!--<span class="fa arrow"></span>--></a>
                         </li>
                     </ul>
                 </div>
@@ -222,14 +160,6 @@
                                 <div class="col-sm-5">
                                     <input name="name" class="form-control" type="text" placeholder="" value="{{ name }}" disabled="disabled" onfocus="this.select();">
                                 </div>
-                                <!--<div class="col-sm-2">
-                                    <button id="name" class="btn btn-sm btn-default edit">
-				        <li class="fa fa-fw fa-edit"></li>编辑
-                                    </button>
-                                    <button id="name" class="btn btn-sm btn-success save" style="display:none">
-				        <li class="fa fa-fw fa-floppy-o"></li>保存
-                                    </button>
-                                </div>-->
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">图片</label>
@@ -248,28 +178,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--<div class="col-sm-2">
-                                    <button id="photo" class="btn btn-sm btn-default edit">
-				        <li class="fa fa-fw fa-edit"></li>编辑
-                                    </button>
-                                    <button id="photo" class="btn btn-sm btn-success save" style="display:none">
-				        <li class="fa fa-fw fa-floppy-o"></li>保存
-                                    </button>
-                                </div>-->
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">描述</label>
                                 <div class="col-sm-5">
                                     <input class="form-control" type="text" placeholder="" name="desc" value="{{ desc }}" disabled="disabled" onfocus="this.select();">
                                 </div>
-                                <!--<div class="col-sm-2">
-                                    <button id="desc" class="btn btn-sm btn-default edit">
-				        <li class="fa fa-fw fa-edit"></li>编辑
-                                    </button>
-                                    <button id="desc" class="btn btn-sm btn-success save" style="display:none">
-				        <li class="fa fa-fw fa-floppy-o"></li>保存
-                                    </button>
-                                </div>-->
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">规格</label>
@@ -279,65 +193,21 @@
                                         <span class="input-group-addon" id="basic-addon2">克/份</span>
                                     </div>
                                 </div>
-                                <!--<label class="co-sm-2 control-label">克/份</label>-->
-                                <!--<div class="col-sm-2">
-                                    <button id="size" class="btn btn-sm btn-default edit">
-				        <li class="fa fa-fw fa-edit"></li>编辑
-                                    </button>
-                                    <button id="size" class="btn btn-sm btn-success save" style="display:none">
-				        <li class="fa fa-fw fa-floppy-o"></li>保存
-                                    </button>
-                                </div>-->
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">原价</label>
+                                <label class="col-sm-2 control-label">价格</label>
                                 <div class="col-sm-5">
                                     <div class="input-group">
                                         <input class="form-control" type="text" placeholder="" name="price" value="{{ price }}" disabled="disabled" onfocus="this.select();">
                                         <span class="input-group-addon" id="basic-addon2">元/份</span>
                                     </div>
                                 </div>
-                                <!--<label class="co-sm-2 control-label">元</label>-->
-                                <!--<div class="col-sm-2">
-                                    <button id="price" class="btn btn-sm btn-default edit">
-				        <li class="fa fa-fw fa-edit"></li>编辑
-                                    </button>
-                                    <button id="price" class="btn btn-sm btn-success save" style="display:none">
-				        <li class="fa fa-fw fa-floppy-o"></li>保存
-                                    </button>
-                                </div>-->
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">促销价</label>
-                                <div class="col-sm-5">
-                                    <div class="input-group">
-                                        <input class="form-control" type="text" placeholder="" name="mprice" value="{{ mprice }}" disabled="disabled" onfocus="this.select();">
-                                        <span class="input-group-addon" id="basic-addon2">元/份</span>
-                                    </div>
-                                </div>
-                                <!--<label class="co-sm-2 control-label">元</label>-->
-                                <!--<div class="col-sm-2">
-                                    <button id="mprice" class="btn btn-sm btn-default edit">
-				        <li class="fa fa-fw fa-edit"></li>编辑
-                                    </button>
-                                    <button id="mprice" class="btn btn-sm btn-success save" style="display:none">
-				        <li class="fa fa-fw fa-floppy-o"></li>保存
-                                    </button>
-                                </div>-->
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">产地</label>
                                 <div class="col-sm-5">
                                     <input class="form-control" type="text" placeholder="" name="origin" value="{{ origin }}" disabled="disabled" onfocus="this.select();">
                                 </div>
-                                <!--<div class="col-sm-2">
-                                    <button id="origin" class="btn btn-sm btn-default edit">
-				        <li class="fa fa-fw fa-edit"></li>编辑
-                                    </button>
-                                    <button id="origin" class="btn btn-sm btn-success save" style="display:none">
-				        <li class="fa fa-fw fa-floppy-o"></li>保存
-                                    </button>
-                                </div>-->
                             </div>
                         <form/>
   		    </div>
@@ -383,12 +253,6 @@
             });
         });
         $(".edit").click(function() {
-            //var name = this.id;
-            //$("input[name=" + name + "]").removeAttr('disabled');
-            //$("input[name=" + name + "]").focus();
-            //var obj = this.nextElementSibling||this.nextSibling;
-            //$(obj).removeAttr('style');
-            //this.style.display="none";
             $("input[name=name]").removeAttr('disabled');
             $("input[name=photo]").removeAttr('disabled');
             $("input[name=desc]").removeAttr('disabled');
@@ -403,71 +267,7 @@
 	});    
         $(".save").click(function() {
             $("#items-edit").submit();
-            //name = this.id;
-            //var obj = this.previousElementSibling || this.previousSibling;
-	    //$(obj).removeAttr('style');
-            //this.style.display="none";
-	    //$("input[name=" + name + "]").attr('disabled', 'disabled');
-            //value = $("input[name=" + name + "]").val();
-            //href = '/vegetables/update';
-            //$.post(href, {name: value, 'csrfmiddlewaretoken': '{{ csrf_token }}'}); 
-            //$("input[name=name]").attr('disabled', 'disabled');
-            //$("input[name=photo]").attr('disabled', 'disabled');
-            //$("input[name=desc]").attr('disabled', 'disabled');
-            //$("input[name=size]").attr('disabled', 'disabled');
-            //$("input[name=price]").attr('disabled', 'disabled');
-            //$("input[name=mprice]").attr('disabled', 'disabled');
-            //$("input[name=origin]").attr('disabled', 'disabled');
-            //var obj = this.previousElementSibling || this.previousSibling;
-            //$(obj).attr('style', 'margin-top:-20px;');
-	    ////$(obj).removeAttr('style');
-            //this.style.display="none";
-            //history.back();
-
         });
-        //function getBase64Image(img) {
-      	//    var canvas = document.createElement("canvas");
-        //    canvas.width = img.width;
-        //    canvas.height = img.height;
-
-        //    var ctx = canvas.getContext("2d");
-        //    ctx.drawImage(img, 0, 0, img.width, img.height);
-
-        //    var dataURL = canvas.toDataURL("image/png");
-        //    var blob = dataURLtoBlob(dataRUL);
-        //    alert(blob);
-        //    return dataURL
-
-    	//};
-        //$("input[type=file]").change(function(event){
-        //    for (i in event.target.files[0]){
-        //        alert(event.target.files[0].i);
-        //    }
-        //    alert(event.target.files[0]);
-        //});
-        //$(document).ready(function(){
-        //    var img = document.createElement('img');
-        //    img.src = '{{ photo }}';
-        //    img.onload =function() {
-        //        var data = getBase64Image(img);
-        //        var $img = $('<img>')
-        //        $img[0].src = data;
-        //        var preview = $(".fileinput-preview");
-        //        //$("img").attr('src',data);
-        //        preview.html($img);
-        //        console.log(data);
-        //    }
-        //    
-        //    //var reader = new FileReader();
-	//    //reader.onload = function ( event ) { 
-	//    //    var data = event.target.result;
-	//    //    var img = document.createElement("img");
-	//    //    img.src = data;
-        //    //    var preview = $(".fileinput-preview");
-        //    //    preview.html(img);
-        //    //}
-        //    //reader.readAsDataURL('{{ photo }}');
-	//});
     </script>
 </body>
 </html>
