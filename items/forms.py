@@ -1,4 +1,3 @@
-
 from django import forms
 
 
@@ -8,7 +7,6 @@ class CreateItemForm(forms.Form):
     desc = forms.CharField(required=True)
     size = forms.FloatField(required=True)
     price = forms.FloatField(required=True)
-    mprice = forms.FloatField(required=True)
     origin = forms.CharField(required=True)
 
 
@@ -18,5 +16,4 @@ class UpdateItemForm(forms.Form):
     desc = forms.CharField(required=True)
     size = forms.FloatField(required=True)
     price = forms.FloatField(required=True)
-    mprice = forms.FloatField(required=True)
     origin = forms.CharField(required=True)

@@ -11,7 +11,8 @@ from .models import Item, Photo
 
 
 def index(request):
-    return response('items/items.html', {'items': Item.objects.order_by('-created')},
+    return response('items/items.html',
+                    {'items': Item.objects.order_by('-created')},
                     context_instance=RequestContext(request))
 
 
@@ -25,9 +26,7 @@ def show(request):
                      'desc': item.desc,
                      'size': item.size,
                      'price': item.price,
-                     'mprice': item.mprice,
-                     'origin': item.origin,
-                     'photo': item.photo},
+                     'origin': item.origin},
                     context_instance=RequestContext(request))
 
 
@@ -38,7 +37,6 @@ def create(request):
         desc = form.cleaned_data['desc']
         size = form.cleaned_data['size']
         price = form.cleaned_data['price']
-        mprice = form.cleaned_data['mprice']
         origin = form.cleaned_data['origin']
 
         photo = form.cleaned_data['photo']
@@ -51,7 +49,6 @@ def create(request):
                 desc=desc,
                 size=size,
                 price=price,
-                mprice=mprice,
                 origin=origin)
         item.save()
     else:
@@ -73,7 +70,6 @@ def update(request):
         item.desc = form.cleaned_data['desc']
         item.size = form.cleaned_data['size']
         item.price = form.cleaned_data['price']
-        item.mprice = form.cleaned_data['mprice']
         item.origin = form.cleaned_data['origin']
 
     if len(request.FILES):
