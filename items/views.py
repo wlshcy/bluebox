@@ -7,7 +7,7 @@ from django.shortcuts import render_to_response as response
 from django.http import HttpResponseRedirect
 
 from .forms import CreateItemForm, UpdateItemForm
-from .models import Item, Photo
+from .models import Item, Image 
 
 
 def index(request):
@@ -39,13 +39,13 @@ def create(request):
         price = form.cleaned_data['price']
         origin = form.cleaned_data['origin']
 
-        photo = form.cleaned_data['photo']
-        photo = Photo(photo)
-        photo.save()
+        image = form.cleaned_data['image']
+        image = Image(image)
+        image.save()
 
         item = Item(
                 name=name,
-                photo=photo.url,
+                image=image.url,
                 desc=desc,
                 size=size,
                 price=price,
@@ -73,10 +73,10 @@ def update(request):
         item.origin = form.cleaned_data['origin']
 
     if len(request.FILES):
-        photo = form.cleaned_data['photo']
-        photo = Photo(photo)
-        photo.save()
-        item.photo = photo.url
+        image = form.cleaned_data['image']
+        image = Image(image)
+        image.save()
+        item.image = image.url
         item.save()
     return HttpResponseRedirect('/items/')
 

@@ -169,13 +169,13 @@
                                 <div class="col-sm-5">
                                     <div class="fileinput fileinput-exists" data-provides="fileinput">
                                         <div class="fileinput-preview fileinput-exists thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
-                                            <img src="{{ photo }}">
+                                            <img src="{{ image }}">
                                         </div>
                                         <div>
                                             <span class="btn btn-default btn-file">
                                                 <span class="fileinput-new" disabled="disabled" btn-primary>选择图片</span>
                                                 <span class="fileinput-exists change" disabled="disabled">更换</span>
-                                                <input type="file" name="photo" disabled="disabled">
+                                                <input type="file" name="image" disabled="disabled">
                                             </span>
                                             <!--<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">移除</a>-->
                                         </div>
@@ -265,15 +265,9 @@
             });
         });
         $(".edit").click(function() {
-            //var name = this.id;
-            //$("input[name=" + name + "]").removeAttr('disabled');
-            //$("input[name=" + name + "]").focus();
-            //var obj = this.nextElementSibling||this.nextSibling;
-            //$(obj).removeAttr('style');
-            //this.style.display="none";
             $(".change").removeAttr('disabled');
             $("input[name=name]").removeAttr('disabled');
-            $("input[name=photo]").removeAttr('disabled');
+            $("input[name=image]").removeAttr('disabled');
             $("input[name=desc]").removeAttr('disabled');
             $("input[name=size]").removeAttr('disabled');
             $("input[name=price]").removeAttr('disabled');
@@ -286,71 +280,7 @@
 	});    
         $(".save").click(function() {
             $("#special-edit").submit();
-            //name = this.id;
-            //var obj = this.previousElementSibling || this.previousSibling;
-	    //$(obj).removeAttr('style');
-            //this.style.display="none";
-	    //$("input[name=" + name + "]").attr('disabled', 'disabled');
-            //value = $("input[name=" + name + "]").val();
-            //href = '/vegetables/update';
-            //$.post(href, {name: value, 'csrfmiddlewaretoken': '{{ csrf_token }}'}); 
-            //$("input[name=name]").attr('disabled', 'disabled');
-            //$("input[name=photo]").attr('disabled', 'disabled');
-            //$("input[name=desc]").attr('disabled', 'disabled');
-            //$("input[name=size]").attr('disabled', 'disabled');
-            //$("input[name=price]").attr('disabled', 'disabled');
-            //$("input[name=mprice]").attr('disabled', 'disabled');
-            //$("input[name=origin]").attr('disabled', 'disabled');
-            //var obj = this.previousElementSibling || this.previousSibling;
-            //$(obj).attr('style', 'margin-top:-20px;');
-	    ////$(obj).removeAttr('style');
-            //this.style.display="none";
-            //history.back();
-
         });
-        //function getBase64Image(img) {
-      	//    var canvas = document.createElement("canvas");
-        //    canvas.width = img.width;
-        //    canvas.height = img.height;
-
-        //    var ctx = canvas.getContext("2d");
-        //    ctx.drawImage(img, 0, 0, img.width, img.height);
-
-        //    var dataURL = canvas.toDataURL("image/png");
-        //    var blob = dataURLtoBlob(dataRUL);
-        //    alert(blob);
-        //    return dataURL
-
-    	//};
-        //$("input[type=file]").change(function(event){
-        //    for (i in event.target.files[0]){
-        //        alert(event.target.files[0].i);
-        //    }
-        //    alert(event.target.files[0]);
-        //});
-        //$(document).ready(function(){
-        //    var img = document.createElement('img');
-        //    img.src = '{{ photo }}';
-        //    img.onload =function() {
-        //        var data = getBase64Image(img);
-        //        var $img = $('<img>')
-        //        $img[0].src = data;
-        //        var preview = $(".fileinput-preview");
-        //        //$("img").attr('src',data);
-        //        preview.html($img);
-        //        console.log(data);
-        //    }
-        //    
-        //    //var reader = new FileReader();
-	//    //reader.onload = function ( event ) { 
-	//    //    var data = event.target.result;
-	//    //    var img = document.createElement("img");
-	//    //    img.src = data;
-        //    //    var preview = $(".fileinput-preview");
-        //    //    preview.html(img);
-        //    //}
-        //    //reader.readAsDataURL('{{ photo }}');
-	//});
     </script>
 </body>
 </html>

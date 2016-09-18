@@ -6,7 +6,7 @@ from mongoengine import *
 from bluebox.settings import DATABASE, IMAGE_UPLOAD_PATH, IMAGE_URL
 
 
-from PIL import Image
+from PIL import Image as IMG
 
 import uuid
 import os
@@ -15,9 +15,9 @@ import datetime
 connect(host=DATABASE)
 
 
-class OnSale(Document):
+class Onsales(Document):
     name = StringField(required=True, max_length=30)
-    photo = StringField(required=True)
+    image = StringField(required=True)
     desc = StringField(required=True, max_length=50)
     size = FloatField()
     price = FloatField()
@@ -27,7 +27,7 @@ class OnSale(Document):
     created = DateTimeField(default=datetime.datetime.now)
 
 
-class Photo(object):
+class Image(object):
     def __init__(self, image):
         self.image = image
         self._name = uuid.uuid4().hex
@@ -45,5 +45,5 @@ class Photo(object):
         return os.path.join(IMAGE_URL, self.name)
 
     def save(self, default_format="PNG"):
-        img = Image.open(self.image)
+        img = IMG.open(self.image)
         img.save(self.path, default_format)

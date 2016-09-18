@@ -7,22 +7,23 @@ from django.shortcuts import render_to_response as response
 from django.http import HttpResponseRedirect
 
 from .forms import CreateOnSaleForm, UpdateOnSaleForm
-from .models import OnSale, Photo
+from .models import Onsales, Image 
 
 
 def index(request):
     
-    return response('items/specials.html', {'specials': OnSale.objects.order_by('-created')}, context_instance=RequestContext(request))
+    return response('items/specials.html', {'specials': Onsales.objects.order_by('-created')}, context_instance=RequestContext(request))
 
 
 def show(request):
     id = request.GET.get('id')
-    special = OnSale.objects(id=id)[0]
+    special = Onsales.objects(id=id)[0]
 
     return response('items/special.html',
                     {'id': special.id,'name': special.name, 'desc': special.desc,
                      'size': special.size, 'price': special.price,
-                     'sprice': special.sprice, 'origin': special.origin, 'photo': special.photo},
+                     'sprice': special.sprice, 'origin': special.origin,
+                     'image': special.image},
                     context_instance=RequestContext(request))
 
 def new(request):
@@ -39,13 +40,13 @@ def create(request):
         sprice = form.cleaned_data['sprice']
         origin = form.cleaned_data['origin']
 
-        photo = form.cleaned_data['photo']
-        photo = Photo(photo)
-        photo.save()
+        image = form.cleaned_data['image']
+        image = Image(image)
+        image.save()
 
-        special = OnSale(
+        special = Onsales(
 		          name=name,
-                  photo=photo.url,
+                  image=image.url,
                   desc=desc,
                   size=size,
                   price=price,
@@ -62,7 +63,7 @@ def update(request):
     form = UpdateOnSaleForm(request.POST, request.FILES)
     if form.is_valid():
         id = request.POST['id']
-        special = OnSale.objects(id=id)[0]
+        special = Onsales.objects(id=id)[0]
         special.name = form.cleaned_data['name']
         special.desc = form.cleaned_data['desc']
         special.size = form.cleaned_data['size']
@@ -71,17 +72,17 @@ def update(request):
         special.origin = form.cleaned_data['origin']
 
 	if len(request.FILES):
-            photo = form.cleaned_data['photo']
-            photo = Photo(photo)
+            image = form.cleaned_data['image']
+            image = Image(image)
             photo.save()
-	    special.photo = photo.url
+	    special.image = image.url
         special.save()
         
     return HttpResponseRedirect('/specials/')
 
 def delete(request):
     id = request.POST.get('id')
-    special = OnSale.objects(id=id)[0]
+    special = Onsales.objects(id=id)[0]
     special.delete()
 
     return HttpResponseRedirect('/specials/')

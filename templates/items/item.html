@@ -166,13 +166,13 @@
                                 <div class="col-sm-5">
                                     <div class="fileinput fileinput-exists" data-provides="fileinput">
                                         <div class="fileinput-preview fileinput-exists thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
-                                            <img src="{{ photo }}">
+                                            <img src="{{ image }}">
                                         </div>
                                         <div>
                                             <span class="btn btn-default btn-file">
                                                 <span class="fileinput-new" disabled="disabled" btn-primary>选择图片</span>
                                                 <span class="fileinput-exists">更换</span>
-                                                <input type="file" name="photo" disabled="disabled">
+                                                <input type="file" name="image" disabled="disabled">
                                             </span>
                                             <!--<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">移除</a>-->
                                         </div>
@@ -254,7 +254,7 @@
         });
         $(".edit").click(function() {
             $("input[name=name]").removeAttr('disabled');
-            $("input[name=photo]").removeAttr('disabled');
+            $("input[name=image]").removeAttr('disabled');
             $("input[name=desc]").removeAttr('disabled');
             $("input[name=size]").removeAttr('disabled');
             $("input[name=price]").removeAttr('disabled');
