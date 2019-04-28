@@ -7,18 +7,18 @@ from django.shortcuts import render_to_response as response
 from django.http import HttpResponseRedirect
 
 from .forms import CreateItemForm, UpdateItemForm
-from .models import Item, Image 
+from .models import Items, Image 
 
 
 def index(request):
     return response('items/items.html',
-                    {'items': Item.objects.order_by('-created')},
+                    {'items': Items.objects.order_by('-created')},
                     context_instance=RequestContext(request))
 
 
 def show(request):
     id = request.GET.get('id')
-    item = Item.objects(id=id)[0]
+    item = Items.objects(id=id)[0]
 
     return response('items/item.html',
                     {'id': item.id,
@@ -43,7 +43,7 @@ def create(request):
         image = Image(image)
         image.save()
 
-        item = Item(
+        item = Items(
                 name=name,
                 image=image.url,
                 desc=desc,
@@ -65,7 +65,7 @@ def update(request):
     form = UpdateItemForm(request.POST, request.FILES)
     if form.is_valid():
         id = request.POST['id']
-        item = Item.objects(id=id)[0]
+        item = Items.objects(id=id)[0]
         item.name = form.cleaned_data['name']
         item.desc = form.cleaned_data['desc']
         item.size = form.cleaned_data['size']
@@ -83,7 +83,7 @@ def update(request):
 
 def delete(request):
     _id = request.POST.get('id')
-    item = Item.objects(id=_id)[0]
+    item = Items.objects(id=_id)[0]
     item.delete()
 
     return HttpResponseRedirect('/items/')

@@ -69,12 +69,12 @@ WSGI_APPLICATION = 'bluebox.wsgi.application'
 
 DATABASE = "mongodb://localhost:27017/bluebox"
 
-DATABASES = {
-    'default': {
-        'HOST': '192.168.99.100',
-        'PORT': '32768',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'HOST': '192.168.99.100',
+#         'PORT': '32768',
+#     }
+# }
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates/'),
@@ -103,6 +103,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static/'),
 )
 
-IMAGE_UPLOAD_PATH= os.path.join('/home', 'upload')
+IMAGE_UPLOAD_PATH= "/Users/niuminguo/PycharmProjects/bluebox/static/upload" # os.path.join('/home', 'upload')
 
-IMAGE_URL = 'http://img.freshtaste.me:8080'
+# IMAGE_URL = 'http://img.freshtaste.me:8080'
+IMAGE_URL = 'http://192.168.1.117:8090'

@@ -11,8 +11,8 @@ from .models import Onsales, Image
 
 
 def index(request):
-    
-    return response('items/specials.html', {'specials': Onsales.objects.order_by('-created')}, context_instance=RequestContext(request))
+    specials = Onsales.objects.order_by('-created')
+    return response('items/specials.html', {'specials': specials}, context_instance=RequestContext(request))
 
 
 def show(request):
@@ -74,7 +74,7 @@ def update(request):
 	if len(request.FILES):
             image = form.cleaned_data['image']
             image = Image(image)
-            photo.save()
+            image.save()
 	    special.image = image.url
         special.save()
         
